@@ -63,11 +63,11 @@ submit.addEventListener('click', ()=> {
   // ✅ flags (assume all valid at start)
   let isValid = true;
 
-
-
+    
+  // ---- Name ----
     if (!nameRegex.test(surNameValue)) {
         surName.value = "";
-        surName.placeholder = "Incorrect!";
+        surName.placeholder = "FullName is Incorrect!";
         surName.style.border = "2px solid red";
         isValid = false;
     } else {
@@ -75,57 +75,69 @@ submit.addEventListener('click', ()=> {
         surName.style.color = "green";
         surName.placeholder = "Name is valid";
     }
+
+      // ---- Email ----
     if (!emailRegex.test(emailValue)) {
         email.value = ""
-        email.placeholder = "Incorrect"
+        email.placeholder = "Email is Incorrect"
         email.style.border = "2px solid red"
         email.style.color = "red"
         isValid = false;
     } else {
         email.style.border = "2px solid green"
         email.style.color = "green"
-        email.placeholder = "Name is valid"
+        email.placeholder = "Email is valid"
     }
+
+      // ---- Username ----
       if (!nameRegex.test(userNameValue)) {
         userName.value = "";
-        userName.placeholder = "Incorrect!";
+        userName.placeholder = "UserName is Incorrect!";
         userName.style.border = "2px solid red";
         isValid = false;
     } else {
         userName.style.border = "2px solid green";
         userName.style.color = "green";
-        userName.placeholder = "Name is valid";
+        userName.placeholder = "UserName is valid";
     }
+
+      // ---- Phone ----
       if (!numberRegex.test(phoneNumberValue)) {
         phoneNumber.value = "";
-        phoneNumber.placeholder = "Incorrect!";
+        phoneNumber.placeholder = "Phone number is Incorrect!";
         phoneNumber.style.border = "2px solid red";
         isValid = false;
      } else {
         phoneNumber.style.border = "2px solid green";
         phoneNumber.style.color = "green";
-        phoneNumber.placeholder = "Name is valid";
+        phoneNumber.placeholder = "Phone is valid";
     }
+
+      // ---- Password ----
         if (!numberRegex.test(passwordValue)) {
         password.value = "";
-        password.placeholder = "Incorrect!";
+        password.placeholder = "Password is Incorrect!";
         password.style.border = "2px solid red";
         isValid = false;
     } else {
         password.style.border = "2px solid green";
         password.style.color = "green";
-        password.placeholder = "Name is valid";
+        password.placeholder = "Password is valid";
     }
+
+      // ---- Confirm Password ----
        if (confirmPasswordValue !== passwordValue || confirmPasswordValue === "") {
         confirmPassword.value = "";
-        confirmPassword.placeholder = "Incorrect!";
+        confirmPassword.placeholder = "Passwords do not match!";
         confirmPassword.style.border = "2px solid red";
         isValid = false;
     } else {
         confirmPassword.style.border = "2px solid green";
         confirmPassword.style.color = "green";
-        confirmPassword.placeholder = "Name is valid";
+        confirmPassword.placeholder = "Password confirmed";
     }
+
+      // ---- Gender ----
         gender.innerHTML = ""
         let text = document.createElement("div")
         text.style.color = "red"
@@ -143,10 +155,11 @@ submit.addEventListener('click', ()=> {
     }
     gender.appendChild(text)
      
+     // Final check
    if (isValid) {
-      alert(" Congratulations! You successfully logged in.");
+      alert("🎉 Congratulations! You successfully logged in.");
    }else {
-      alert(" One or more fields are incorrect. Please fix them!");
+      alert("❌  One or more fields are incorrect. Please fix them!");
    }
     /*
     this option one but it is not best way cause im only checking the length im not checked they have correct input or not
